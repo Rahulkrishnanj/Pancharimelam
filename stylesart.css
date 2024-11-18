@@ -9,6 +9,7 @@
 body {
     line-height: 1.6;
     color: #505050;
+    background-color: rgb(0, 0, 0);
 }
 
 /* Header */
@@ -16,6 +17,7 @@ header {
     background-color: #174b06a3;
     color: #fff;
     padding: 1rem 0;
+    
 }
 
 header .container {
@@ -27,8 +29,19 @@ header .container {
     padding: 0 20px;
 }
 
-header h1 {
-    font-size: 1.8rem;
+h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    color: aliceblue;
+    font-family: keraleeyam;
+    font-weight: normal;
+}
+h2 {
+    font-size: 4.2rem;
+    text-align: center;
+    color: aliceblue;
+    font-family: Keraleeyam;
+    font-weight: normal;
 }
 
 nav ul {
@@ -45,6 +58,7 @@ nav ul li a {
     color: #fff;
     font-size: 1rem;
     transition: color 0.3s;
+    font-weight: bold;
 }
 
 nav ul li a:hover {
@@ -55,7 +69,7 @@ nav ul li a:hover {
 .hero {
     background-image: url('https://files.yappe.in/place/full/pulimathoor-mahadeva-temple-9984549.webp');
     background-size: cover;
-    background-position: center;
+    background-position: top;
     height: 60vh;
     display: flex;
     align-items: center;
@@ -65,7 +79,7 @@ nav ul li a:hover {
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
 }
 
