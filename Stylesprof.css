@@ -1,0 +1,218 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 10px;
+}
+
+.navbar ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.navbar li {
+    padding: 0 10px;
+    
+}
+
+.navbar a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar input[type="file"] {
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 10;
+    cursor: pointer;
+}
+
+.navbar li.right {
+    margin-left: 70% ; /* Pushes this item to the right */
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 20px;
+}
+h3 {
+    text-align: center;
+}
+
+
+/* Profile Container */
+.profile-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 30px;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.file-upload {
+    justify-content: center;
+
+}
+
+/* Field Box */
+.field-box {
+    flex: 1 1 calc(50% - 20px);
+    background: #f9f9f9;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    min-width: 180px;
+}
+
+/* Detail Box */
+.detail-box {
+    font-size: 1.1em;
+    color: #555;
+    padding: 12px;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+
+}
+
+/* Dropdown Specific Styling */
+.detail-box select {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #ffffff;
+    color: #333;
+    text-align: center;
+}
+
+.detail-box select:focus {
+    border-color: #2a3a4a;
+    outline: none;
+}
+
+/* Photo Box */
+.photo-box {
+    flex: 1 1 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.photo-box img {
+    width: 150px;
+    height: 200px;
+    border-radius: 10%;
+    border: 2px solid #2c3e50;
+    margin: 0 auto;
+}
+
+/* Button Box */
+.button-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-box button {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+}
+
+.button-box button:hover {
+    background-color: #032646;
+}
+
+button {
+    padding:5px;
+    color:#ffffff;
+    background-color: #004d99;
+    font-weight:bold;
+    border-radius: 5px;
+    font-size: 1em;
+
+}
+
+button:hover {
+    background-color: #2a3a4a;
+}
+/* Navigation Bar */
+.navbar {
+    background-color: #004d99;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffcc00;
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .field-box {
+        flex: 1 1 100%;
+    }
+}
