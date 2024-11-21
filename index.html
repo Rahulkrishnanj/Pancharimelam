@@ -1,56 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Institution</title>
-    <link rel="stylesheet" href="stylesart.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Name Entry</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    button[type="button"] {
+      background-color: #f44336;
+      color: white;
+    }
+
+    #entries {
+      margin-top: 20px;
+    }
+
+    #entries ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #entries li {
+      background: #f9f9f9;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#feeentry">Fee Entry</a></li>
-                    <li><a href="#contact">Profile</a></li>
+  <h1>Enter Your Name</h1>
+  <form id="nameForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <button type="submit">Submit</button>
+    <button type="button" onclick="clearForm()">Clear</button>
+  </form>
 
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>പുളിമാത്തൂർ ശ്രീ മഹാദേവ ക്ഷേത്ര ട്രസ്റ്റ്</h1>
-            <h2>മഹാദേവ കലാക്ഷേത്ര</h2>
-            <p>Explore the world of creativity and tradition with our institution.</p>
-        </div>
-    </section>
+  <h2>Entries</h2>
+  <div id="entries">
+    <ul id="entryList"></ul>
+  </div>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Us</h2>
-            <p>
-                Mahadeva Kalakshetra is a premier institution dedicated to nurturing artistic talents in music, dance, and visual arts. 
-                Join us to experience a unique blend of tradition and modernity in the world of art.
-            </p>
-        </div>
-    </section>
+  <script>
+    const form = document.getElementById("nameForm");
+    const entryList = document.getElementById("entryList");
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Get in touch to know more about our programs and offerings:</p>
-            <p>Email: mahadevakalaakshethra@gmail.com | Phone: +91 9633874257</p>
-        </div>
-    </section>
+    const backendURL = "http://localhost:3000/update-excel"; // Replace with backend URL
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Mahadeva Kalakshetra. All Rights Reserved.</p>
-        </div>
-    </footer>
+    // Handle form submission
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nameInput = document.getElementById("name");
+      const name = nameInput.value.trim();
+
+      if (name) {
+        // Send data to the backend
+        fetch(backendURL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name }),
+        })
+          .then((response) => {
+            if (response.ok) {
+              addEntryToList(name);
+              nameInput.value = "";
+            } else {
+              alert("Error saving entry!");
+            }
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+
+    // Add entry to the list
+    function addEntryToList(name) {
+      const li = document.createElement("li");
+      li.textContent = name;
+      entryList.appendChild(li);
+    }
+
+    // Clear the form
+    function clearForm() {
+      document.getElementById("name").value = "";
+    }
+  </script>
 </body>
 </html>
