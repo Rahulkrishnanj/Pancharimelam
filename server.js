@@ -7,10 +7,10 @@ const fs = require("fs");
 const app = express();
 app.use(bodyParser.json());
 
-const GITHUB_TOKEN = "your_personal_access_token"; // Replace with your token
-const REPO_OWNER = "your_username";
-const REPO_NAME = "your_repository";
-const FILE_PATH = "path/to/your_excel_file.xlsx";
+const GITHUB_TOKEN = "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"; // Replace with your token
+const REPO_OWNER = "Rahulkrishnanj";
+const REPO_NAME = "Chendaclass";
+const FILE_PATH = "Namedemo.xlsx";
 const BRANCH = "main";
 
 const octokit = new Octokit({ auth: GITHUB_TOKEN });
