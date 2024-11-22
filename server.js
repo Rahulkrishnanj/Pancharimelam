@@ -60,7 +60,7 @@ app.post("/update-excel", async (req, res) => {
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.readFile(filePath);
 
-    const sheet = workbook.getWorksheet(1) || workbook.addWorksheet("Names");
+    const sheet = workbook.getWorksheet("Sheet1") || workbook.addWorksheet("Names");
     sheet.addRow([name]);
     await workbook.xlsx.writeFile(filePath);
 
